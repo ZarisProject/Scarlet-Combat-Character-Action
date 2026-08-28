@@ -2,10 +2,11 @@
 
 Unreal Engine 5 toolkit for creating character action combat systems.
 
+**Status: Preproduction**
 
 ## Principle
 ![](Documentation/Attachments/Screenshot%202026-08-28%20154600.png)
-![Obsidian Diagram File](Documentation/Principle%20Diagram.canvas)
+[Obsidian Diagram File](Documentation/Principle%20Diagram.canvas)
 
 Scarlet Character Action is entirely based on animations. By adding special animation notifies to animation sequences one can specify combo branch windows, attack trace windows and other types of effects to each individual animation (later called "move").
 
@@ -15,7 +16,7 @@ A data table that contains data about every move and their relation to other mov
 Each entry contains following information:
 * `MoveName` - name of the move, acts as a key value in the data table;
 * `Animation` - animation montage corresponding to the move;
-* `ComboBranches` - a dictionary (`FMap`) that maps *Combo Keys* to following moves.
+* `ComboBranches` - a dictionary (`TMap`) that maps *Combo Keys* to following moves.
 * ...
 
 ### Character Action Component (`SC_CharacterAction`)
