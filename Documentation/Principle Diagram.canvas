@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"c73da5aa6d5a4153","type":"text","text":"# Character Action Component","x":-1180,"y":-20,"width":300,"height":200},
+		{"id":"c07585e7f1afd482","type":"text","text":"# Move Set Library","x":-1800,"y":-180,"width":300,"height":520,"color":"5"},
+		{"id":"b09664a6068e2954","type":"text","text":"# Character Action Input System Component","x":-1180,"y":-440,"width":300,"height":200,"color":"1"},
+		{"id":"5aa3da98d3925dc6","type":"text","text":"","x":-1675,"y":420,"width":50,"height":51},
+		{"id":"838dbc56373b1a20","type":"text","text":"# Combo Animation Input Notify","x":-140,"y":-20,"width":300,"height":200,"color":"2"},
+		{"id":"ef09d0417e00fa2d","type":"text","text":"# Move Animation","x":440,"y":-20,"width":300,"height":200,"color":"4"},
+		{"id":"10530388f79b55a5","type":"text","text":"","x":565,"y":420,"width":50,"height":51},
+		{"id":"cb02548fcfdd0c6d","type":"text","text":"# Damage Negation Animation Notify","x":1040,"y":-20,"width":300,"height":200,"color":"2"},
+		{"id":"466717b0171046a1","type":"text","text":"# Damage Trace Animation Notify","x":1040,"y":-280,"width":300,"height":200,"color":"2"},
+		{"id":"0f0ce2548227cf7b","type":"text","text":"# ...","x":1040,"y":240,"width":300,"height":80,"color":"2"},
+		{"id":"97a06db48b06fbe0","type":"text","text":"# Combo Transition Animation Notify","x":-140,"y":-320,"width":300,"height":200,"color":"2"},
+		{"id":"c5b8603c1ae2b8cb","type":"text","text":"","x":-760,"y":-245,"width":50,"height":51}
+	],
+	"edges":[
+		{"id":"a40c806f613f6e28","fromNode":"ef09d0417e00fa2d","fromSide":"left","toNode":"838dbc56373b1a20","toSide":"right"},
+		{"id":"7fae6013fe06fdbb","fromNode":"c73da5aa6d5a4153","fromSide":"left","toNode":"c07585e7f1afd482","toSide":"right","label":"New Move"},
+		{"id":"0e3cd83cf34e4ba1","fromNode":"b09664a6068e2954","fromSide":"bottom","toNode":"c73da5aa6d5a4153","toSide":"top","label":"Input"},
+		{"id":"501d1d72e1b15190","fromNode":"c73da5aa6d5a4153","fromSide":"bottom","toNode":"838dbc56373b1a20","toSide":"bottom","label":"Input"},
+		{"id":"d7163e77805e1ceb","fromNode":"c07585e7f1afd482","fromSide":"bottom","toNode":"5aa3da98d3925dc6","toSide":"top"},
+		{"id":"2d24f81eab50e7c6","fromNode":"5aa3da98d3925dc6","fromSide":"right","toNode":"10530388f79b55a5","toSide":"left","label":"Start New Animation"},
+		{"id":"f727d3de64c51e97","fromNode":"10530388f79b55a5","fromSide":"top","toNode":"ef09d0417e00fa2d","toSide":"bottom"},
+		{"id":"4c5c65c47f5c27ae","fromNode":"ef09d0417e00fa2d","fromSide":"right","toNode":"466717b0171046a1","toSide":"left"},
+		{"id":"b1fb6cc9e82b6cb1","fromNode":"ef09d0417e00fa2d","fromSide":"right","toNode":"cb02548fcfdd0c6d","toSide":"left"},
+		{"id":"a88d5395b5656ce2","fromNode":"ef09d0417e00fa2d","fromSide":"right","toNode":"0f0ce2548227cf7b","toSide":"left"},
+		{"id":"140132cd727a7a2f","fromNode":"838dbc56373b1a20","fromSide":"top","toNode":"97a06db48b06fbe0","toSide":"bottom"},
+		{"id":"9e29dd5e44f2f475","fromNode":"c5b8603c1ae2b8cb","fromSide":"bottom","toNode":"c73da5aa6d5a4153","toSide":"right"},
+		{"id":"65de90598bea93f7","fromNode":"97a06db48b06fbe0","fromSide":"left","toNode":"c5b8603c1ae2b8cb","toSide":"right","label":"Matching Input -> Trigger New Move"}
+	]
+}
