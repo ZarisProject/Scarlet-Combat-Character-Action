@@ -1,6 +1,6 @@
 # Scarlet Combat: Character Action
 
-Unreal Engine 5 toolkit for creating character action combat systems.
+Unreal Engine 5 toolkit for creating character action combat systems. The approach used in this system is entirely dependent on animations. Specify input windows and transition points using animation notifies and create branching combo sequences using Data Tables.
 
 **Status: Preproduction**
 
@@ -55,3 +55,8 @@ As specified in *Combo Input Notify* description, this notify specifies the poin
 #### Other Notifies
  - Damage Trace Notify
  - Damage Negation Notify
+
+### Code Design
+
+![](Documentation/Attachments/Code%20Design%20Diagram.png)
+
