@@ -56,7 +56,7 @@ As specified in *Combo Input Notify* description, this notify specifies the poin
  - Damage Trace Notify
  - Damage Negation Notify
 
-### Code Design
+## Code Design
 
 ![](Documentation/Attachments/Code%20Design%20Diagram.png)
 
