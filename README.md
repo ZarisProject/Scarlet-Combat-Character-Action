@@ -2,7 +2,7 @@
 
 Unreal Engine 5 toolkit for creating character action combat systems. The approach used in this system is entirely dependent on animations. Specify input windows and transition points using animation notifies and create branching combo sequences using Data Tables.
 
-**Status: Preproduction**
+**Status: In Development**
 
 ## Principle
 ![](Documentation/Attachments/Screenshot%202026-08-28%20154600.png)
