@@ -19,6 +19,8 @@ Each entry contains following information:
 * `ComboBranches` - a dictionary (`TMap`) that maps *Combo Keys* to following moves.
 * ... *Additional meta data that will be added later*.
 
+If a certain move is supposed to be a *Root move* (combo started, a move that can be triggered from an idle state), then it's `MoveName` must match the input required to trigger it. This decision was made to make Move Set Libraries fully self contained. 
+
 ### Character Action Component (`SC_CharacterAction`)
 An actor component that handles incoming inputs, fetches combo information from *Move Set Libraries* (one component can look up moves from multiple libraries) and triggers new move animations.
 
@@ -37,7 +39,7 @@ Currently playing animation montage with special Animation Notifies attached to 
 
 ### Animation Notifies
 
-![](Documentation/Attachments/Screenshot%202026-08-28%20152549.png)
+![](Documentation/Attachments/Principle%20Imagery.png)
 #### Combo Input Notify
 A Notify State (notify acting over a duration), that represents a time window, in which a certain input will result in an execution of a new combo move. Actual execution of the next move will be delayed until the next *Combo Transition Notify*. 
 
@@ -51,6 +53,9 @@ As specified in *Combo Input Notify* description, this notify specifies the poin
 *Combo Transition Notifies* come in two forms:
 * Standard Notify (Transition point) - a single point of animation, at which a transition between moves is possible. *Combo Key* must be cached before reaching this point for transition to occur.
 * Notify State (Transition Window) - a time window, during which any cached *Combo Key*  immediately results in a transition to a new move. *Combo Key* may be cached before or during the Transition Window. 
+
+#### Combo Reset Notify
+This notify end combo sequence, resetting `CurrentMove` in Character Action Component back to `None`.
 
 #### Other Notifies
  - Damage Trace Notify
