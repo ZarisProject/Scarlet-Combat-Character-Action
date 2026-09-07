@@ -46,7 +46,12 @@ void USC_CharacterAction::Input(const FName& Input, int32 Complexity)
 }
 
 // Called by Combo Transition Notifies, triggers a transition to the next move, based on Combo Key and Current Move
-void USC_CharacterAction::TriggerComboMove(const FName& ComboKey)
+void USC_CharacterAction::TriggerComboMove(const FName& DefaultComboKey, bool ForceDefaultComboKey)
+{
+}
+
+// Resets current move and buffers at the end of the combo
+void USC_CharacterAction::ResetCombo()
 {
 }
 

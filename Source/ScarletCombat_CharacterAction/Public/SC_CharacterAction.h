@@ -70,7 +70,11 @@ public:
 	// Called by Combo Transition Notifies, triggers a transition to the next move, based on Combo Key and Current Move
 	// Call manually to force a transition
 	UFUNCTION(BlueprintCallable, Category = "ScarletCombat|CharacterAction")
-	void TriggerComboMove(const FName& ComboKey);
+	void TriggerComboMove(const FName& DefaultComboKey, bool ForceDefaultComboKey = false);
+
+	// Resets current move and buffers at the end of the combo
+	UFUNCTION(BlueprintCallable, Category = "ScarletCombat|CharacterAction")
+	void ResetCombo();
 
 	// Called by Combo Input Notifies, adds an entry to InputRequestBuffer
 	void RequestInput(const FName& Input, class USC_ComboInputNotify* RequestorNotify);
@@ -78,4 +82,5 @@ public:
 	// Wether the specified combo key is valid or not
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "ScarletCombat|CharacterAction")
 	bool IsComboKeyValid(const FName& ComboKey, const FName& Move = "SC_CURRENT");
+
 };

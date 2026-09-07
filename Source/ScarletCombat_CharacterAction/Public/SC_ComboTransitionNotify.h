@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Animation/AnimNotifies/AnimNotify.h"
+#include "Animation/AnimNotifies/AnimNotifyState.h"
 #include "SC_ComboTransitionNotify.generated.h"
 
 /**
@@ -14,4 +15,24 @@ class SCARLETCOMBAT_CHARACTERACTION_API USC_ComboTransitionNotify : public UAnim
 {
 	GENERATED_BODY()
 	
+public:
+
+	// If a value different to "None" is specified, then this transition point will trigger even with no inputs from the player
+	// And will use the DefaultComboKey
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	FName DefaultComboKey;
+};
+
+
+UCLASS()
+class SCARLETCOMBAT_CHARACTERACTION_API USC_ComboTransitionStateNotify : public UAnimNotifyState
+{
+	GENERATED_BODY()
+
+public:
+
+	// If a value different to "None" is specified, then this transition point will trigger even with no inputs from the player
+	// And will use the DefaultComboKey
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	FName DefaultComboKey;
 };

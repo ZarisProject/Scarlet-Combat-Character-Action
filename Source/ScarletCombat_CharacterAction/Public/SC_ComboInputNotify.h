@@ -14,4 +14,23 @@ class SCARLETCOMBAT_CHARACTERACTION_API USC_ComboInputNotify : public UAnimNotif
 {
 	GENERATED_BODY()
 	
+public:
+
+	// List of inputs that sattisfy the input request
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	TSet<FName> Inputs;
+
+	// Combo Key used to look up the next Combo Branch of the current move in Move Set Library
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	FName ComboKey;
+
+	// Whether this input window shall override results of previous yet untransitioned input windows
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	bool OverrideExistingKey = false;
+
+public:
+
+	// Serving input to the input notify
+	// Returns the result of ADDITIONAL checks (if such are present)
+	bool ServeInput(const FName& Input);
 };

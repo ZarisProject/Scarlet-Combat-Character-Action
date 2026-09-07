@@ -22,4 +22,14 @@ class SCARLETCOMBAT_CHARACTERACTION_API ISC_CharacterActionInterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
+
+	// Implement this method in your character class. It must return your character action component
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "ScarletCombat|CharacterAction|Character")
+	class USC_CharacterAction* GetCharacterActionComponent();
+	virtual class USC_CharacterAction* GetCharacterActionComponent_Implementation() { return nullptr; }
+
+	// Implement this method in your character class. It is supposed to play the specify animation montage on your character mesh
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "ScarletCombat|CharacterAction|Character")
+	void PlayMoveAnimation(class UAnimMontage* Animation);
+	virtual void PlayMoveAnimation_Implementation(class UAnimMontage* Animation) {}
 };
