@@ -19,7 +19,7 @@ At the end of every *Character Action Tick* requested inputs are served using th
 2. If found:
 	1. Serve found input to the notify that requested it;
 	2. if not successful:
-		1.  remove found input from the `InputRequestBuffer` and go back to step 1.
+		1.  go back to step 1 and start searching from the next element of `InputRequestBuffer` .
 3. Clear `PlayerInputBuffer` and `InputRequestBuffer`.
 
 Character Action Component serves inputs back to Combo Input Notifies using
