@@ -24,6 +24,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
 	FName ComboKey;
 
+	// Used to sort same input requests from different notifies, the bigger the value - the higher the priority
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
+	int32 Priority = 0;
+
 	// Whether this input window shall override results of previous yet untransitioned input windows
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
 	bool OverrideExistingKey = false;
