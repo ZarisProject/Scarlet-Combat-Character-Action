@@ -46,6 +46,9 @@ protected:
 	// Buffer of input requests from Combo Input Notifies that were created during the last tick
 	TMap<FName, TArray<TPair<class USC_ComboInputNotify*, int32>>> InputRequestBuffer;
 
+	// Cached combo key
+	FName ComboKeyCache;
+
 public:
 	// Array of move set libraries, which are used for combo look ups
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
@@ -61,6 +64,12 @@ protected:
 
 	// Called every tick when no combo is active (CurrentMove is None), attempts to start a Root move from the player input
 	void StartCombo();
+
+	// Initiates move animation
+	void StartMove(const FName& MoveName, FSC_ComboMoveData* MoveData);
+
+	// Attempts to find move data in move set libraries
+	FSC_ComboMoveData* LookUpMoveData(const FName& MoveName);
 
 public:	
 	// Called every frame
