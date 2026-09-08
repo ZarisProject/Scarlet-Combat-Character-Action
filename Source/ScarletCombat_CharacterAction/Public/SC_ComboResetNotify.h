@@ -14,4 +14,7 @@ class SCARLETCOMBAT_CHARACTERACTION_API USC_ComboResetNotify : public UAnimNotif
 {
 	GENERATED_BODY()
 	
+public:
+	virtual void Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation,
+		const FAnimNotifyEventReference& EventReference) override;
 };
