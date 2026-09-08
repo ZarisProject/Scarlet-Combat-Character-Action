@@ -55,7 +55,7 @@ As specified in *Combo Input Notify* description, this notify specifies the poin
 * Notify State (Transition Window) - a time window, during which any cached *Combo Key*  immediately results in a transition to a new move. *Combo Key* may be cached before or during the Transition Window. 
 
 #### Combo Reset Notify
-This notify end combo sequence, resetting `CurrentMove` in Character Action Component back to `None`.
+This notify ends combo sequence, resetting `CurrentMove` in Character Action Component back to `None`.
 
 #### Other Notifies
  - Damage Trace Notify
