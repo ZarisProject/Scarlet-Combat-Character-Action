@@ -41,10 +41,10 @@ protected:
 	FName CurrentMove;
 
 	// Buffer of player inputs that happened during the last tick
-	TMap<FName, int32> PlayerInputBuffer;
+	TArray<TPair<FName, int32>> PlayerInputBuffer;
 
 	// Buffer of input requests from Combo Input Notifies that were created during the last tick
-	TArray<TPair<FName, class USC_ComboInputNotify*>> InputRequestBuffer;
+	TMap<FName, TArray<TPair<class USC_ComboInputNotify*, int32>>> InputRequestBuffer;
 
 public:
 	// Array of move set libraries, which are used for combo look ups
@@ -56,8 +56,11 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	// Called every tick, handles PlayerInputBuffer and InputRequestBuffer
+	// Called every tick when a combo is active (CurrentMove is not None), handles PlayerInputBuffer and InputRequestBuffer
 	void ServeInput();
+
+	// Called every tick when no combo is active (CurrentMove is None), attempts to start a Root move from the player input
+	void StartCombo();
 
 public:	
 	// Called every frame
@@ -77,7 +80,7 @@ public:
 	void ResetCombo();
 
 	// Called by Combo Input Notifies, adds an entry to InputRequestBuffer
-	void RequestInput(const FName& Input, class USC_ComboInputNotify* RequestorNotify);
+	void RequestInput(const FName& Input, class USC_ComboInputNotify* RequestorNotify, int32 Priority);
 
 	// Wether the specified combo key is valid or not
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "ScarletCombat|CharacterAction")
