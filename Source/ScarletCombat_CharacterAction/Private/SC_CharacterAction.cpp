@@ -72,6 +72,9 @@ void USC_CharacterAction::StartMove(const FName& MoveName, FSC_ComboMoveData* Mo
 {
 	CurrentMove = MoveName;
 
+	// Clear cache (just in case)
+	ComboKeyCache = NAME_None;
+
 	if (GetOwner() && GetOwner()->Implements<USC_CharacterActionInterface>())
 	{
 		// Playing animation (through an interface call)
@@ -169,9 +172,9 @@ void USC_CharacterAction::TriggerComboMove(const FName& DefaultComboKey, bool Fo
 // Resets current move and buffers at the end of the combo
 void USC_CharacterAction::ResetCombo()
 {
-	CurrentMove = FName();
+	CurrentMove = NAME_None;
 
-	ComboKeyCache = FName();
+	ComboKeyCache = NAME_None;
 
 	PlayerInputBuffer.Empty();
 	InputRequestBuffer.Empty(InputRequestBuffer.Num());
