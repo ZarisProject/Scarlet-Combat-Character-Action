@@ -21,6 +21,10 @@ public:
 	// And will use the DefaultComboKey
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
 	FName DefaultComboKey;
+
+public:
+	virtual void Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, 
+		const FAnimNotifyEventReference& EventReference) override;
 };
 
 
@@ -35,4 +39,17 @@ public:
 	// And will use the DefaultComboKey
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Default")
 	FName DefaultComboKey;
+
+protected:
+	class USC_CharacterAction* Cached_CharacterAction = nullptr;
+
+public:
+	virtual void NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation,
+		float TotalDuration, const FAnimNotifyEventReference& EventReference) override;
+
+	virtual void NotifyTick(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation,
+		float FrameDeltaTime, const FAnimNotifyEventReference& EventReference) override;
+
+	virtual void NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation,
+		const FAnimNotifyEventReference& EventReference) override;
 };
