@@ -14,10 +14,7 @@ void USC_ComboResetNotify::Notify(USkeletalMeshComponent* MeshComp, UAnimSequenc
     USC_CharacterAction* CharacterAction = nullptr;
 
     if (Owner && Owner->Implements<USC_CharacterActionInterface>())
-    {
-        USC_CharacterAction* CharacterAction = ISC_CharacterActionInterface::Execute_GetCharacterActionComponent(Owner);
-        CharacterAction = CharacterAction;
-    }
+        CharacterAction = ISC_CharacterActionInterface::Execute_GetCharacterActionComponent(Owner);
 
     if (!CharacterAction) return;
 

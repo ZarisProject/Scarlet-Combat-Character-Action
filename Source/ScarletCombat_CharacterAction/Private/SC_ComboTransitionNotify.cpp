@@ -17,10 +17,7 @@ void USC_ComboTransitionNotify::Notify(USkeletalMeshComponent* MeshComp, UAnimSe
     USC_CharacterAction* CharacterAction = nullptr;
 
     if (Owner && Owner->Implements<USC_CharacterActionInterface>())
-    {
-        USC_CharacterAction* CharacterAction = ISC_CharacterActionInterface::Execute_GetCharacterActionComponent(Owner);
-        CharacterAction = CharacterAction;
-    }
+        CharacterAction = ISC_CharacterActionInterface::Execute_GetCharacterActionComponent(Owner);
 
     if (!CharacterAction) return;
 
@@ -39,10 +36,7 @@ void USC_ComboTransitionStateNotify::NotifyBegin(USkeletalMeshComponent* MeshCom
     AActor* Owner = MeshComp->GetOwner();
 
     if (Owner && Owner->Implements<USC_CharacterActionInterface>())
-    {
-        USC_CharacterAction* CharacterAction = ISC_CharacterActionInterface::Execute_GetCharacterActionComponent(Owner);
-        Cached_CharacterAction = CharacterAction;
-    }
+        Cached_CharacterAction = ISC_CharacterActionInterface::Execute_GetCharacterActionComponent(Owner);
 }
 
 void USC_ComboTransitionStateNotify::NotifyTick(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, 
